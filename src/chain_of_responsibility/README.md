@@ -7,16 +7,17 @@ Since by default Javascript does not support import from multiple files, these e
 
 make sure Node is installed:
 
-.. code-block:: console
+```console
     $ node --version
     v7.x.x
+```
 
 Testing
 --------
 
 Here's our test code on file ```test.js```:
 
-.. code-block:: javascript
+``` javascript
     //'imports'
     const model = require('./check');
     const controller = require('./discount_controller');
@@ -42,10 +43,11 @@ Here's our test code on file ```test.js```:
     console.log('TOTAL: ',check.getTotal());
     console.log('discount:', discount);
     console.log("Final Value: ", check.getTotal() - discount);
+```
 
 The output must be like that:
 
-.. code-block::console
+```console
     ---Check---
     Item A 10
     Item B 50
@@ -54,3 +56,4 @@ The output must be like that:
     TOTAL:  460
     discount: 0
     Final Value:  460
+```
