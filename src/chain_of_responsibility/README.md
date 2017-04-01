@@ -15,6 +15,12 @@ make sure Node is installed:
 Testing
 --------
 
+To test, open your terminal in your project file and run:
+
+```console
+    node test.js
+```
+
 Here's our test code on file ```test.js```:
 
 ``` javascript
@@ -56,4 +62,23 @@ The output must be like that:
     TOTAL:  460
     discount: 0
     Final Value:  460
+```
+
+If we change the code for:
+
+```javascript
+    check.pushItem(new model.Item('Item A', 100.0));
+```
+
+the output is going to be:
+
+```console
+---Check---
+Item A 100
+Item B 50
+Item C 400
+-------
+TOTAL:  550
+discount: 38.50000000000001
+Final Value:  511.5
 ```
