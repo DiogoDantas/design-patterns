@@ -1,2 +1,2 @@
-# design-patterns-python
-Implementação dos padrões de design mais conhecidos utilizando a linguagem python.
+# design-patterns
+Implementação dos padrões de design mais conhecidos.
