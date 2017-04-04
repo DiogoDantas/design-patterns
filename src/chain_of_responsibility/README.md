@@ -82,3 +82,78 @@ TOTAL:  550
 discount: 38.50000000000001
 Final Value:  511.5
 ```
+
+C# :hash:
+-------
+
+C# can be compiled and runned in linux by using .NET Core, so make sure it's installed:
+
+```console
+    $ dotnet --version
+    1.x.x
+```
+
+Testing
+--------
+
+To test, open your terminal in your project file and run:
+
+```console
+    dotnet restore
+    dotnet run
+```
+
+Here's our test code on file ```Program.cs```:
+
+``` csharp
+using System;
+
+namespace ChainOfResp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //initializing controller and check
+            DiscountController controller = new DiscountController();
+            Check check = new Check();
+
+            //adding items to check
+            check.pushItem(new Item("Item A", 100.0));
+            check.pushItem(new Item("Item B", 50.0));
+            check.pushItem(new Item("Item C", 400.0));
+
+            //calculating discount
+            double discount = controller.calculate(check);
+
+            //printing
+            System.Console.WriteLine("---Check---");
+
+            foreach (Item item in check.items)
+            {
+                System.Console.WriteLine("{0} {1}", item.name, item.value);
+            }
+
+            System.Console.WriteLine("-------");
+
+            System.Console.WriteLine("TOTAL: {0}", check.getTotal());
+            System.Console.WriteLine("discount: {0}", discount);
+            System.Console.WriteLine("Final Value: {0}", check.getTotal() - discount);
+
+        }
+    }
+}
+```
+
+The output must be like that:
+
+```console
+---Check---
+Item A 100
+Item B 50
+Item C 400
+-------
+TOTAL:  550
+discount: 38.5
+Final Value:  511.5
+```
